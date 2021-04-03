@@ -16,7 +16,16 @@ addLayer("p", {
     gainMult() { // Calculate the multiplier for main currency from bonuses
         mult = new Decimal(1)
         return mult
-    },
+    }},
+    upgrades, {
+        rows: 2,
+        cols: 3,
+        11: {
+            title: "uhhh",
+            description: "no",
+            cost: new Decimal(1),
+            unlocked() { return player[this.layer].unlocked }, // The upgrade is only visible when this is true
+        },
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
     },
